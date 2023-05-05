@@ -42,3 +42,6 @@ TTS:speech to text语音合成
   - chinese_speech_pretrain(STT): 针对中文语音转文字的预训练模型。1 万小时中文数据作为无监督预训练数据。数据主要来源于 YouTube 和 Podcast，覆盖了各种类型录制场景、背景噪声、说话方式等，其领域主要包括有声书、解说、纪录片、电视剧、访谈、新闻、朗读、演讲、综艺和其他等10大场景。Github 仓库：https://github.com/TencentGameMate/chinese_speech_pretrain
 
   - HuBERT (STT): 一个用于语音识别的深度学习自监督模型。它是 Facebook AI 的一个项目，旨在创建一个通用的预训练语音表示模型。HuBERT 的目标是学习音频信号中的丰富表示，以便在下游任务中表现良好。代码仓库：https://huggingface.co/docs/transformers/model_doc/hubert
+  
+  
+STT示例：[STT.ipynb](STT.ipynb)
