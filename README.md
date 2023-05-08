@@ -46,7 +46,7 @@ TTS:speech to text语音合成
   - Open AI Whisper(STT): Whisper 是 OpenAI 开发的一种自动语音识别（ASR）系统。Whisper ASR 是一个深度学习模型，旨在将声音转换为文字。它被训练用于多种应用，如语音识别、语音翻译、语音助手等。Whisper 模型的一个关键特点是它能够在各种语言和领域中表现良好，这得益于其在大量多语言数据上进行的预训练。官网链接：https://openai.com/research/whisper
 
 ## 3.模型实例
-part1. 语音转文字(STT)：
+Part1. 语音转文字(STT)：
 
 使用方法：
 
@@ -61,5 +61,9 @@ part1. 语音转文字(STT)：
 代码链接：[STT.ipynb](STT.ipynb)
 
 简单效果图如下：![model_comparison.JPG](model_comparison.JPG)
+
+Part2. 文字转语音(TTS):
+
+
 
 
