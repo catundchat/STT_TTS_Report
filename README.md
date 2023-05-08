@@ -57,6 +57,6 @@ part1. 语音转文字：
 
 这里给出所用的音频文件分别为P279_convert.wav,P28_convert.wav和P290_convert.wav，以及翻译ground_truth文件ground_truth_3voice.docx在main目录下。
 
-简单效果图如下：[model_comparison.JPG]
+简单效果图如下：[model_comparison.JPG](model_comparison.JPG)
 代码链接：[STT.ipynb](STT.ipynb)
 
