@@ -55,5 +55,7 @@ part1. 语音转文字：
 - 运行程序即可得到语音识别的音频文字
 - 若要计算WER,CER等，需要提供ground_truth为正确音频文字
 
+这里给出所用的音频文件及翻译ground_truth在main目录下。
+
 代码链接：[STT.ipynb](STT.ipynb)
-STT示例：[STT.ipynb](STT.ipynb)
+
