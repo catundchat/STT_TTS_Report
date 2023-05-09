@@ -1,31 +1,48 @@
 # STT and TTS report
-语音识别语音合成模型调研
+语音识别与语音合成模型调研
 
-STT:speech to text语音识别
-TTS:speech to text语音合成
+STT(Speech to Text): 语音识别
 
-## 1.付费大模型
+TTS(Speech to Text): 语音合成
+## 1.评价标准
+在评估语音转文字（STT）模型的性能时，去除标点符号是一种常见的做法，尤其是当模型的主要目标是识别语音中的单词或字符时。去除标点符号可以帮助消除标点在评估指标（如 CER）中的影响，从而使得评估结果更加集中于单词或字符的识别准确性。因此，评估中将给出去除标点符号前后的字符错误率与准确率。
 
-这几个大模型使用方法：付费获得对应的STT,TTS API key,相当于把数据上传到服务器后返回结果。
-- [Google Cloud](https://cloud.google.com/speech-to-text?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-e-dr-1605212&utm_content=text-ad-none-any-DEV_c-CRE_553443483826-ADGP_Desk%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20_%20AI%20%26%20ML%20_%20Speech-to-Text_Speech%20to%20Text_General-KWID_43700076157305329-aud-1436107373922%3Akwd-21425535976&utm_term=KW_google%20speech%20to%20text-ST_google%20speech%20to%20text&gclid=Cj0KCQjw0tKiBhC6ARIsAAOXutmHOklLcF_1b7lCO53k4_IYUXv9TbM1F6h5NLa6TiFT6N4BljJL0A4aAvxZEALw_wcB&gclsrc=aw.ds)
+在中文语音识别任务中，因为中文的最小单位是字符而非单词，所以相较准确率和词错误率，字符错误率能够更好地评估STT任务质量。
+### 字符错误率CER(character error rate)
+字符错误率是评估模型在字符级别的错误识别表现。它主要通过计算插入、删除和替换字符的数量，并将其与参考文本中字符的总数进行比较。CER 越低，表示模型的性能越好。CER 的计算公式为：
+CER = (插入 + 删除 + 替换) / 参考文本字符数
 
-   Google Cloud Speech-to-Text（STT）：Google提供了一个强大的、基于云的语音识别服务，可以识别多种语言和方言。它可以实时转录长时间的语音，并提供了一些高级功能，如自动标点和语音自适应。
+CER 的值范围从 0 到 1，0 表示完美的识别，1 表示识别结果与参考完全不同。
+### 准确率Accuracy
+准确率是用于衡量分类任务性能的一个指标，它表示正确预测的样本数量占总样本数量的比例。准确率越高，表示模型的性能越好。准确率的计算公式为：
+Accuracy = (正确预测的样本数量) / (总样本数量)
 
-   Google Cloud Text-to-Speech（TTS）：Google的Text-to-Speech API基于谷歌的WaveNet技术，可以生成自然、真实的语音。它支持多种语言、语音和自定义发音。您还可以调整语速、音高和音量增益。
+准确率的值范围从 0 到 1，1 表示模型完美地预测了所有样本，而 0 表示模型没有正确预测任何样本。
 
-- [Microsoft Azure](https://azure.microsoft.com/en-us/products/cognitive-services/speech-to-text)
+## 2.模型介绍
+### 调用API接口的付费模型
+使用方法：付费获得对应的STT,TTS API key,相当于把数据上传到服务器后返回结果。
+- Google Cloud
 
-  Microsoft Azure Speech Service：微软的Azure Speech Service包括了一个语音识别服务，支持多种语言和场景。它提供实时和批量转录功能，还可以适应不同的领域词汇和说话风格。
+   [Google Cloud Speech-to-Text（STT）](https://console.cloud.google.com/speech/overview?hl=zh-cn&project=enduring-sweep-386203)：Google提供了一个强大的、基于云的语音识别服务，可以识别多种语言和方言。它可以实时转录长时间的语音，并提供了一些高级功能，如自动标点和语音自适应。在P290_convert.wav上测验结果如下：
+Accuracy: 0.26,
+Accuracy without punctuation: 0.58,
+CER: 0.14,
+CER without punctuation: 0.08.
 
-  Microsoft Azure Text to Speech：微软的Text to Speech服务使用神经网络生成自然 sounding 语音。它支持多种语言和语音，还可以创建定制的语音。您可以调整语速、音高和发音。
-  
-- [IBM watson](https://www.ibm.com/cloud/watson-text-to-speech)
+   [Google Cloud Text-to-Speech（TTS）](https://console.cloud.google.com/marketplace/product/google/texttospeech.googleapis.com?hl=zh-cn&project=enduring-sweep-386203&returnUrl=%2Fspeech%2Ftext-to-speech%3Fhl%3Dzh-cn%26project%3Denduring-sweep-386203)：Google的Text-to-Speech API基于谷歌的WaveNet技术，可以生成自然、真实的语音。它支持多种语言、语音和自定义发音。您还可以调整语速、音高和音量增益。
 
-  IBM Watson Speech to Text（STT）：IBM Watson提供了一个语音识别服务，可以识别多种语言和说话风格。它支持实时和批量转录，还可以适应特定领域的词汇和短语。
+- [Baidu](https://ai.baidu.com/ai-doc/SPEECH/Tl9mh38eu)
 
-  IBM Watson Text to Speech（TTS）：IBM Watson的Text to Speech服务可以将文本转换为自然 sounding 语音。它支持多种语言和语音，并提供了一些高级功能，如表情控制和定制发音。
+百度提供了短文本，长文本以及离线语音识别和合成功能，并且有10个语音可供选择。
 
-## 2.开源大模型
+- 腾讯云[语音识别](https://cloud.tencent.com/document/product/1093)和[语音合成](https://cloud.tencent.com/product/tts)模型
+
+腾讯云提供了高识别准确率的语音识别服务和高拟真度、灵活配置的语音合成产品。
+
+ 
+
+## 3.开源大模型
   
 使用方法：
   - 加载预训练模型和对应tokenizer
@@ -48,7 +65,7 @@ TTS:speech to text语音合成
 ## 3.模型实例
 Part1. 语音转文字(STT)：
 
-使用方法：
+### 使用方法：
 
 - 首先安装transformers,jiwer库用于计算词错误率WER和字错误率CER，librosa库用于音频导入
 - 选择已微调好的模型，推荐wbbbbb/wav2vec2-large-chinese-zh-cn，其CER大概在12.30%左右
