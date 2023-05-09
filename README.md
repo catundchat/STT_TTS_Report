@@ -75,7 +75,7 @@ Part1. 语音转文字(STT)：
 
 代码链接：[STT.ipynb](code/STT.ipynb)
 
-简单效果图如下：![model_comparison.JPG](img/model_comparison.JPG)
+不同模型的准确率及字符错误率为：![model_comparison.JPG](model_comparison.JPG)
 
 Part2. 文字转语音(TTS):
 
