@@ -79,9 +79,11 @@ Part1. 语音转文字(STT)：
 
 Part2. 文字转语音(TTS):
 
-- bark模型 需要较好GPU加速才更快，代码如下：[TTS_bark.ipynb](code/TTS_bark.ipynb)
-- [中文文本转语音](https://huggingface.co/spaces/chenmgtea/cn_tts) 使用hugging face上已有的训练好的模型 生成的语音见[audioP290.wav](voice/audioP290.wav)
-- 调用[百度](https://ai.baidu.com/)API, 填写好信息之后运行即可，代码如下：[TTS_baidu.ipynb](code/TTS_baidu.ipynb)
+- bark模型：需要GPU加速，代码如下：[TTS_bark.ipynb](code/TTS_bark.ipynb)
+
+- 使用hugging face上已有的训练好的语音合成模型，生成的语音见[audioP290.wav](voice/audioP290.wav)，模型仓库链接：https://huggingface.co/spaces/chenmgtea/cn_tts
+
+- 调用百度API, 填写好信息之后运行即可，代码如下：[TTS_baidu.ipynb](code/TTS_baidu.ipynb)，申请百度API链接：https://ai.baidu.com/
 
 
 
