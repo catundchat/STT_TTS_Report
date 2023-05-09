@@ -5,7 +5,7 @@ STT(Speech to Text): 语音识别
 
 TTS(Speech to Text): 语音合成
 ## 1.评价标准
-在评估语音转文字（STT）模型的性能时，去除标点符号是一种常见的做法，尤其是当模型的主要目标是识别语音中的单词或字符时。去除标点符号可以帮助消除标点在评估指标（如 CER）中的影响，从而使得评估结果更加集中于单词或字符的识别准确性。因此，评估中将给出去除标点符号前后的字符错误率与准确率。
+在评估语音转文字（STT）模型的性能时，去除标点符号是一种常见的做法，尤其是当模型的主要目标是识别语音中的单词或字符时。去除标点符号可以帮助消除标点在评估指标（如 CER）中的影响，从而使得评估结果更加集中于单词或字符的识别准确性。因此，评估中将给出去除标点符号前后的字符错误率与准确率。计算CER与Accuracy的代码为：[cer_accuracy.py](code/cer_accuracy.py)
 
 在中文语音识别任务中，因为中文的最小单位是字符而非单词，所以相较准确率和词错误率，字符错误率能够更好地评估STT任务质量。
 ### 字符错误率CER(character error rate)
@@ -34,15 +34,13 @@ CER without punctuation: 0.08.
 
 - [Baidu](https://ai.baidu.com/ai-doc/SPEECH/Tl9mh38eu)
 
-百度提供了短文本，长文本以及离线语音识别和合成功能，并且有10个语音可供选择。
+    百度提供了短文本，长文本以及离线语音识别和合成功能，并且有10个语音可供选择。
 
 - 腾讯云[语音识别](https://cloud.tencent.com/document/product/1093)和[语音合成](https://cloud.tencent.com/product/tts)模型
 
-腾讯云提供了高识别准确率的语音识别服务和高拟真度、灵活配置的语音合成产品。
+    腾讯云提供了高识别准确率的语音识别服务和高拟真度、灵活配置的语音合成产品。
 
- 
-
-## 3.开源大模型
+### 调用开源模型
   
 使用方法：
   - 加载预训练模型和对应tokenizer
@@ -75,15 +73,15 @@ Part1. 语音转文字(STT)：
 
 这里给出所用的音频文件分别为P279_convert.wav,P28_convert.wav和P290_convert.wav，以及翻译ground_truth文件ground_truth_3voice.docx在main目录下。
 
-代码链接：[STT.ipynb](STT.ipynb)
+代码链接：[STT.ipynb](code/STT.ipynb)
 
-简单效果图如下：![model_comparison.JPG](model_comparison.JPG)
+简单效果图如下：![model_comparison.JPG](img/model_comparison.JPG)
 
 Part2. 文字转语音(TTS):
 
-- bark模型 需要较好GPU加速才更快，代码如下：[TTS_bark.ipynb](TTS_bark.ipynb)
-- [中文文本转语音](https://huggingface.co/spaces/chenmgtea/cn_tts) 使用hugging face上已有的训练好的模型 生成的语音见[audioP290.wav](audioP290.wav)
-- 调用[百度](https://ai.baidu.com/)API, 填写好信息之后运行即可，代码如下：[TTS_baidu.ipynb](TTS_baidu.ipynb)
+- bark模型 需要较好GPU加速才更快，代码如下：[TTS_bark.ipynb](code/TTS_bark.ipynb)
+- [中文文本转语音](https://huggingface.co/spaces/chenmgtea/cn_tts) 使用hugging face上已有的训练好的模型 生成的语音见[audioP290.wav](voice/audioP290.wav)
+- 调用[百度](https://ai.baidu.com/)API, 填写好信息之后运行即可，代码如下：[TTS_baidu.ipynb](code/TTS_baidu.ipynb)
 
 
 
