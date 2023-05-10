@@ -71,9 +71,15 @@ CER without punctuation: 0.08.
 - 运行程序即可得到语音识别的音频文字
 - 若要计算WER,CER, Accuracy等，需要提供ground_truth为正确音频文字
 
-这里给出所用的音频文件分别为voice目录下的P279_convert.wav,P28_convert.wav和P290_convert.wav，以及main目录下，语音对应文字的groundtruth文件ground_truth_3voice.docx
+运行环境：google colab, GPU: Tesla T4, CPU RAM: 25.5GB
+
+在上述运行环境下，转录22s约126字的P290_convert.wav文件需6.8s，转录40s约216字的P282_convert.wav文件需10.6s，转录32s约162字的P279_convert.wav文件需8.7s.
+
+上述音频文件在voice目录下，语音对应文字的groundtruth文件ground_truth_3voice.docx在main目录下。
 
 代码链接：[STT.ipynb](code/STT.ipynb)
+
+产生的接口API界面如下：![stt_interface.JPG](img/stt_interface.JPG)
 
 不同模型的准确率及字符错误率为：
 
