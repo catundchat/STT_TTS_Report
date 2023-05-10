@@ -91,7 +91,7 @@ Accuracy without punctuation：去除标点符号后的准确率
 
 - tts_cn: 该模型从BERT中嵌入隐藏的韵律，获得语法中的自然停顿，并且根据NaturalSpeech推断损失减少声音错误，最后利用VITS框架，获得高音频质量生成的语音。速度可设置为0.1-5.0，默认为1.0，速度越大，生成语音时长越长，速度越小，生成语音时长越短。
  
-目前已能本地化运行。对于上述给出的groundtruth文本（126字），在2 vCPU 16GB RAM上运行耗时约26s，产生27s音频为[audioP290.wav](voice/audioP290.wav)；对相同文本分别更改速度为0.5, 产生的14s音频为[audioP290_speed_0.5.wav](voice/audioP290_speed_0.5.wav)；更改速度为2.0，产生的52s音频为[audioP290_speed_2.0.wav](voice/audioP290_speed_2.0.wav)。模型仓库链接：https://huggingface.co/spaces/catundchat/tts_cn 
+目前已能本地化运行。对于上述给出的groundtruth文本（126字），在2 vCPU 16GB RAM上运行耗时约26s，产生27s音频为[audioP290.wav](voice/audioP290.wav)；对相同文本分别更改速度为0.5, 产生的14s音频为[audioP290_speed_0.5.wav](voice/audioP290_speed_0.5.wav)；更改速度为2.0，产生的52s音频为[audioP290_speed_2.0.wav](voice/audioP290_speed_2.0.wav)。模型接口界面链接：https://huggingface.co/spaces/catundchat/tts_cn 
 
 接口界面如图所示：![tts_interface.JPG](img/tts_interface.JPG)
 
