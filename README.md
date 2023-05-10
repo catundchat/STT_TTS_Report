@@ -75,7 +75,13 @@ Part1. 语音转文字(STT)：
 
 代码链接：[STT.ipynb](code/STT.ipynb)
 
-不同模型的准确率及字符错误率为：![model_comparison.JPG](model_comparison.JPG)
+不同模型的准确率及字符错误率为：
+
+CER without punctuation：去除标点符号后的字符错误率，
+
+Accuracy without punctuation：去除标点符号后的准确率
+
+![model_comparison.JPG](model_comparison.JPG)
 
 Part2. 文字转语音(TTS):
 
