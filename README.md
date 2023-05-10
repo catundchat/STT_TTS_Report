@@ -58,7 +58,7 @@ CER without punctuation: 0.08.
 
   - HuBERT (STT): 一个用于语音识别的深度学习自监督模型。它是 Facebook AI 的一个项目，旨在创建一个通用的预训练语音表示模型。HuBERT 的目标是学习音频信号中的丰富表示，以便在下游任务中表现良好。代码仓库：https://huggingface.co/docs/transformers/model_doc/hubert
   
-  - Open AI Whisper(STT): Whisper 是 OpenAI 开发的一种自动语音识别（ASR）系统。Whisper ASR 是一个深度学习模型，旨在将声音转换为文字。它被训练用于多种应用，如语音识别、语音翻译、语音助手等。Whisper 模型的一个关键特点是它能够在各种语言和领域中表现良好，这得益于其在大量多语言数据上进行的预训练。官网链接：https://openai.com/research/whisper
+  - Open AI Whisper(STT): Whisper 是 OpenAI 开发的一种自动语音识别（ASR）系统。Whisper ASR 是一个深度学习模型，旨在将声音转换为文字。它被训练用于多种应用，如语音识别、语音翻译、语音助手等。Whisper 模型的一个关键特点是它能够在各种语言和领域中表现良好，这得益于其在大量多语言数据上进行的预训练。GitHub上给出了Whisper在中文文本上的平均词错误率(WER)达到了14.7%。官网链接：https://openai.com/research/whisper
 
 ## 3.模型实例
 Part1. 语音转文字(STT)：
@@ -66,10 +66,10 @@ Part1. 语音转文字(STT)：
 ### 使用方法：
 
 - 首先安装transformers,jiwer库用于计算词错误率WER和字错误率CER，librosa库用于音频导入
-- 选择已微调好的模型，推荐wbbbbb/wav2vec2-large-chinese-zh-cn，其CER大概在12.30%左右
+- 选择已微调好的模型，推荐wbbbbb/wav2vec2-large-chinese-zh-cn，去掉标点符号后其CER大概在7.0%左右
 - 选择语音文件，该模型只允许以16kHz采样的wav格式文件
 - 运行程序即可得到语音识别的音频文字
-- 若要计算WER,CER等，需要提供ground_truth为正确音频文字
+- 若要计算WER,CER, Accuracy等，需要提供ground_truth为正确音频文字
 
 这里给出所用的音频文件分别为P279_convert.wav,P28_convert.wav和P290_convert.wav，以及翻译ground_truth文件ground_truth_3voice.docx在main目录下。
 
