@@ -71,7 +71,7 @@ Part1. 语音转文字(STT)：
 - 运行程序即可得到语音识别的音频文字
 - 若要计算WER,CER, Accuracy等，需要提供ground_truth为正确音频文字
 
-这里给出所用的音频文件分别为P279_convert.wav,P28_convert.wav和P290_convert.wav，以及翻译ground_truth文件ground_truth_3voice.docx在main目录下。
+这里给出所用的音频文件分别为voice目录下的P279_convert.wav,P28_convert.wav和P290_convert.wav，以及main目录下，语音对应文字的groundtruth文件ground_truth_3voice.docx
 
 代码链接：[STT.ipynb](code/STT.ipynb)
 
