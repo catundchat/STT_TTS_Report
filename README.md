@@ -79,7 +79,9 @@ CER without punctuation: 0.08.
 
 代码链接：[STT.ipynb](code/STT.ipynb)
 
-产生的接口API界面如下：![stt_interface.JPG](img/stt_interface.JPG)
+产生的接口API界面如下：
+
+![stt_interface.JPG](img/stt_interface.JPG)
 
 不同模型的准确率及字符错误率为：
 
@@ -99,7 +101,9 @@ Accuracy without punctuation：去除标点符号后的准确率
  
 目前已能本地化运行。对于上述给出的groundtruth文本（126字），在2 vCPU 16GB RAM上运行耗时约26s，产生27s音频为[audioP290.wav](voice/audioP290.wav)；对相同文本分别更改速度为0.5, 产生的14s音频为[audioP290_speed_0.5.wav](voice/audioP290_speed_0.5.wav)；更改速度为2.0，产生的52s音频为[audioP290_speed_2.0.wav](voice/audioP290_speed_2.0.wav)。模型接口界面链接：https://huggingface.co/spaces/catundchat/tts_cn 
 
-接口界面如图所示：![tts_interface.JPG](img/tts_interface.JPG)
+产生的接口API界面如下：
+
+![tts_interface.JPG](img/tts_interface.JPG)
 
 - 调用百度API, 填写好信息之后运行即可，代码如下：[TTS_baidu.ipynb](code/TTS_baidu.ipynb)，申请百度API链接：https://ai.baidu.com/
 
