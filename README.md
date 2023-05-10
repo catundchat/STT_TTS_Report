@@ -85,9 +85,13 @@ Accuracy without punctuation：去除标点符号后的准确率
 
 Part2. 文字转语音(TTS):
 
+这里先给出一段groundtruth: 
+
+`信息技术部门中机器学习的主要应用之一是向潜在用户或客户推荐项目。这可以分为两种主要的应用：在线广告和项目建议（通常这些建议的目的仍是为了销售产品）。两者都依赖于预测用户和项目的关联，一旦向该用户展示了广告或推荐了该产品，推荐系统要么预测一些行为的概率。`
+
 - bark模型：需要GPU加速，代码如下：[TTS_bark.ipynb](code/TTS_bark.ipynb)
 
-- 使用hugging face上已有的训练好的语音合成模型，以P290_convert.wav为例，生成的语音见[audioP290.wav](voice/audioP290.wav)，模型仓库链接：https://huggingface.co/spaces/maxmax20160403/vits_chinese
+- tts_cn: 该模型从BERT中嵌入隐藏的韵律，获得语法中的自然停顿，并且根据NaturalSpeech推断损失减少声音错误，最后利用VITS框架，获得高音频质量生成的语音。速度可设置为0.1-5.0，默认为1.0，速度越大，生成语音时长越长，速度越小，生成语音时长越短。目前已能本地化运行。对于上述给出的groundtruth文本（126字），在2 vCPU 16GB RAM上运行耗时约26s，产生27s音频为[audioP290.wav](voice/audioP290.wav)；对相同文本分别更改速度为0.5, 产生的14s音频为[audioP290_speed_0.5.wav](voice/audioP290_speed_0.5.wav)；更改速度为2.0，产生的52s音频为[audioP290_speed_2.0.wav](voice/audioP290_speed_2.0.wav)。模型仓库链接：https://huggingface.co/spaces/catundchat/tts_cn 接口如图所示：![tts_interface.JPEG]()
 
 - 调用百度API, 填写好信息之后运行即可，代码如下：[TTS_baidu.ipynb](code/TTS_baidu.ipynb)，申请百度API链接：https://ai.baidu.com/
 
