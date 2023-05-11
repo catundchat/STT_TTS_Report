@@ -7,11 +7,17 @@ TTS(Speech to Text): 语音合成
 
 ## 目录
 
-[1.评价标准](#1评价标准)
+- [1.评价标准](#1评价标准)
+  - [字符错误率CER(character error rate)](#字符错误率cercharacter-error-rate)
+  - [准确率Accuracy](#准确率accuracy)
 
-[2.模型介绍](#2模型介绍)
+- [2.模型介绍](#2模型介绍)
+  - [调用API接口的付费模型](#调用api接口的付费模型)
+  - [调用开源模型](#调用开源模型)
 
-[3.模型实例化](#3模型实例化)
+- [3.模型实例化](#3模型实例化)
+  - [语音转文字STT](#语音转文字stt) 
+  - [文字转语音TTS](#文字转语音tts)
 
 ## 1.评价标准
 在评估语音转文字（STT）模型的性能时，去除标点符号是一种常见的做法，尤其是当模型的主要目标是识别语音中的单词或字符时。去除标点符号可以帮助消除标点在评估指标（如 CER）中的影响，从而使得评估结果更加集中于单词或字符的识别准确性。因此，评估中将给出去除标点符号前后的字符错误率与准确率。计算CER与Accuracy的代码为：[cer_accuracy.py](code/cer_accuracy.py)
@@ -70,7 +76,7 @@ CER without punctuation: 0.08.
   - Open AI Whisper(STT): Whisper 是 OpenAI 开发的一种自动语音识别（ASR）系统。Whisper ASR 是一个深度学习模型，旨在将声音转换为文字。它被训练用于多种应用，如语音识别、语音翻译、语音助手等。Whisper 模型的一个关键特点是它能够在各种语言和领域中表现良好，这得益于其在大量多语言数据上进行的预训练。GitHub上给出了Whisper在中文文本上的平均词错误率(WER)达到了14.7%。官网链接：https://openai.com/research/whisper
 
 ## 3.模型实例化
-### Part1. 语音转文字(STT)：
+### 语音转文字STT
 
 使用方法：
 
@@ -100,7 +106,7 @@ Accuracy without punctuation：去除标点符号后的准确率
 
 ![model_comparison.JPG](img/model_comparison.JPG)
 
-### Part2. 文字转语音(TTS):
+### 文字转语音TTS
 
 这里先给出一段groundtruth: 
 
